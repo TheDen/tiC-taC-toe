@@ -29,7 +29,7 @@ main(int argc, char **argv) {
     board[i] = (char)(((int)'1')+i);
   }
   
-  for (i=0; I<squares; i++) {
+  for (i=0; i<squares; i++) {
     print_board(board[i], i);
   }
   
