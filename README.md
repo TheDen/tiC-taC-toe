@@ -1,1 +1,1 @@
-# tiC-taC-toe
+# tiC-taC-toe game in C
