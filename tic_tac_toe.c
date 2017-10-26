@@ -38,13 +38,14 @@ main(int argc, char **argv) {
     
     if (player_turn==0) {     
       printf("Player 1 (cross), choose your square[1-9]: ");
-      scanf("%d", &square_num);
-      if (board[square_num-1]==cross || board[square_num-1]==naught) {
-	printf("Square already chosen\n");
+      while( !(isdigit( square_num = getchar() ) ) );
+      square_num = square_num - '0';
+      if (square_num > 9 || square_num <1) {
+	printf("Invalid_input, ty again\n");
 	player_turn = 0;
       }
-      else if (square_num > 9 || square_num <1) {
-	printf("Invalid_input, ty again\n");
+      else if (board[square_num-1]==cross || board[square_num-1]==naught) {
+	printf("Square already chosen\n");
 	player_turn = 0;
       }
       else {
@@ -52,7 +53,7 @@ main(int argc, char **argv) {
 	for (i=0; i<squares; i++) {
 	  print_board(board[i], i);
 	}
-       	player_turn = 1;
+       player_turn = 1;
       }
     }
     else if (player_turn==1) {
